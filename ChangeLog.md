@@ -1,3 +1,66 @@
+## 8.2.0 - August 2022
+#### Az.Accounts
+* Implemented 'SupportsShouldProcess' for 'Invoke-AzRestMethod'
+* Supported giving suggestions if an Azure PowerShell command cannot be found, for example when there is a typo in command name.
+
+#### Az.Aks
+* Removed the warning messages for MSGraph migration [#18856]
+
+#### Az.Compute
+* Added parameters 'PackageFileName', 'ConfigFileName' for 'New-AzGalleryApplicationVersion' 
+
+#### Az.ConfidentialLedger
+* General availability of 'Az.ConfidentialLedger'
+
+#### Az.EventHub
+* Added -MinimumTlsVersion to New-AzEventHubNamespace and Set-AzEventHubNamespace
+* Added -SupportsScaling to New-AzEventHubCluster and Set-AzEventHubCluster to support self serve clusters
+* Deprecation warning on a few parameters in cluster cmdlets that will be deprecated in the November major release
+
+#### Az.KeyVault
+* Removed the warning messages for MSGraph migration [#18856]
+
+#### Az.Migrate
+* Fixed a cross-subscription issue
+
+#### Az.Network
+* Made properties 'ApplicationSecurityGroups' and 'IpConfigurations' for 'PrivateEndpoint' updatable in the cmdlet 'Set-AzPrivateEndpoint'
+* Onboarded Device Update for IoT Hub to Private Link Common Cmdlets
+
+#### Az.Resources
+* Removed the warning messages for MSGraph migration [#18856]
+* [Breaking Change] Renamed cmdlet from '{}-AzADAppFederatedIdentityCredential' to '{}-AzADAppFederatedCredential'
+* [Breaking Change] Renamed '-Id' to '-FederatedCredentialId' for
+    - 'Get-AzADAppFederatedCredential'
+    - 'Remove-AzADAppFederatedCredential'
+    - 'Update-AzADAppFederatedCredential'
+* Upgraded API version from Beta to 1.0
+
+#### Az.Sql
+* Removed the warning messages for MSGraph migration [#18856] 
+* Moved SQL Server and SQL Instance from ActiveDirectoryClient to MicrosoftGraphClient
+* Supported cross-subscription Failover Group creation using 'PartnerSubscriptionId' parameter in 'New-AzSqlDatabaseFailoverGroup' cmdlet
+
+#### Az.Storage
+* Added check for storage account sas token is secured with the storage account key.
+    -  'New-AzStorageAccountSASToken'
+* Supported Management Policy rule filter BlobIndexMatch
+    -  Added a new cmdlet 'New-AzStorageAccountManagementPolicyBlobIndexMatchObject'
+    -  Added a new parameter 'BlobIndexMatch' in 'New-AzStorageAccountManagementPolicyFilter'
+
+#### Az.Synapse
+* Set 'ResourceGroupName' as optional for 'Set-AzSynapseSqlAuditSetting' cmdlet
+* Added LastCommitId parameter to 'New-AzureSynapseGitRepositoryConfig'
+* Fixed the issue that update spark pool version fail by 'Update-AzSynapseSparkPool'
+
+#### Az.Websites
+* Fixed 'Publish-AzWebapp' to handle relative paths properly [#18028]
+
+### Thanks to our community contributors
+* Harish Karthic (@hkarthik7), Updated parameter name from `-Type` to `-SkuName` (#18882)
+* Oscar de Groot (@odegroot), Fix "save as pfx" example (#19003)
+* @shiftychris, Update New-AzApplicationGatewayFirewallPolicyManagedRuleSet.md (#18972)
+
 ## 8.1.0 - July 2022
 #### Az.Accounts
 * Supported exporting and importing configurations by 'Export-AzConfig' and 'Import-AzConfig'.
